@@ -1,1 +1,55 @@
-Hello World
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="Todo">
+    <h1 class="Todo__heading">Todo List</h1>
+    <div class="TodoHeader">
+      <input type="text" class="TodoHeader__input"
+             placeholder="What needs to be done?" v-model="newTodo"
+             @keyup.enter="addTodo">
+    </div>
+    <div class="TodoMain" v-if="todos.length" v-cloak>
+      <div class="TodoMain__complete-all" @click="completeAll"></div>
+      <ul class="TodoMainList">
+        <li class="TodoMainList__item" v-for="(item, index) in filteredTodos"
+            :key="index"
+            :class="{'is-completed': item.completed, 'is-editable': item.editable}">
+          <div class="TodoMainList__complete"
+               @click="completeTodo(item)"></div>
+          <div v-if="!item.editable" class="TodoMainList__title">
+            {{item.title}}
+          </div>
+          <input v-else class="TodoMainList__input" type="text" v-todo-focus
+                 v-model="item.title" @keyup.esc="cancelEdit(item)"
+                 @keyup.enter="doneEdit(item)" @blur="doneEdit(item)">
+          <div class="TodoMainList__edit" @click="editTodo(item)">E</div>
+          <div class="TodoMainList__delete" @click="removeTodo(item)">D</div>
+        </li>
+      </ul>
+      <div class="TodoMain__footer">
+        <div class="TodoMain__counter">{{remainingTodos.length}} items left</div>
+        <ul class="TodoFilters">
+          <li class="TodoFilters__item" @click="todoVisability = 'all'"
+              :class="{'is-selected': todoVisability == 'all'}">All
+          </li>
+          <li class="TodoFilters__item" @click="todoVisability = 'active'"
+              :class="{'is-selected': todoVisability == 'active'}">Active
+          </li>
+          <li class="TodoFilters__item" @click="todoVisability = 'completed'"
+              :class="{'is-selected': todoVisability == 'completed'}">Completed
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

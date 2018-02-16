@@ -1,0 +1,157 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #eee;
+  margin: 0;
+  padding: 20px;
+  font: 16px/1.25 Arial, Helvetica, sans-serif;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.Todo {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.Todo__heading {
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 15px;
+}
+
+.TodoHeader {
+  border: 1px solid #000;
+  position: relative;
+  padding: 0 0 0 40px;
+}
+
+.TodoHeader__input {
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 10px 10px 10px 0;
+  outline: none;
+  font-size: inherit;
+}
+
+.TodoMain {
+  margin: 5px 0 0;
+  position: relative;
+}
+
+.TodoMain__complete-all {
+  position: absolute;
+  top: -34px;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: green;
+}
+
+.TodoMainList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.TodoMainList__item {
+  position: relative;
+  padding: 5px 40px;
+  border-bottom: 1px solid #000;
+  height: 31px;
+}
+
+.TodoMainList__delete {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  cursor: pointer;
+}
+
+.TodoMainList__edit {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.TodoMainList__complete {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: red;
+}
+
+.TodoMainList__item.is-completed .TodoMainList__complete {
+  background-color: green;
+}
+
+.TodoMainList__item.is-completed .TodoMainList__title {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.TodoMainList__title {
+  height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.TodoMainList__input {
+  height: 20px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  background-color: #eee;
+}
+
+.TodoMain__footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0;
+}
+
+.TodoMain__counter {
+  font-style: italic;
+}
+
+.TodoFilters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+}
+
+.TodoFilters__item {
+  display: inline-block;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.TodoFilters__item.is-selected {
+  color: red;
+}
