@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[2],{lwP7:function(t,n,o){"use strict";o.r(n);var e=function(){var t=this,n=t.$createElement,o=t._self._c||n;return o("div",{staticClass:"not-found"},[o("h1",[t._v("Not found")]),o("router-link",{attrs:{to:"/"}},[t._v("Back")])],1)},u=[],a=(o("yt8O"),o("VRzm"),{name:"NotFound"}),l=a,s=o("KHd+"),r=Object(s["a"])(l,e,u,!1,null,null,null);n["default"]=r.exports}}]);
-//# sourceMappingURL=2.e5f616ec.js.map
