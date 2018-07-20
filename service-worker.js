@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f0863cda5021dc5b085b80db41b30938.js"
+  "/precache-manifest.6374e714e251759bf9b6428ce481c77c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "realworld"});
